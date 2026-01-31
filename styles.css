@@ -429,14 +429,62 @@ body {
   top: 15%;
   width: 100%;
   text-align: center;
-  font-family: var(--font-header);
-  font-size: 3rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
   color: var(--dark-pink);
-  text-shadow: 2px 2px 0px #fff;
+  text-shadow:
+    2px 2px 4px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(236, 64, 122, 0.2);
   opacity: 0;
   transform: translateY(20px);
   transition: all 1s ease-out;
   z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.birthday-text .text {
+  background: linear-gradient(45deg, #d81b60, #ad1457);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trumpet {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: wiggle 1s infinite ease-in-out;
+}
+
+.trumpet.left {
+  transform: rotate(-20deg);
+}
+.trumpet.right {
+  transform: rotate(20deg) scaleX(-1); /* Flip horizontally */
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+.trumpet.right {
+  animation-name: wiggleRight;
+}
+@keyframes wiggleRight {
+  0%,
+  100% {
+    transform: rotate(10deg) scaleX(-1);
+  }
+  50% {
+    transform: rotate(-10deg) scaleX(-1) scale(1.1);
+  }
 }
 
 .birthday-text.visible {
