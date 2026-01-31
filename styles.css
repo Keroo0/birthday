@@ -636,6 +636,30 @@ body {
   transform: translateY(20px);
   animation: slideUp 1s forwards 0.5s;
   opacity: 0;
+  /* Limit card height if needed, but better to limit content */
+}
+
+/* Scrollable Text Container */
+#msg-paragraphs {
+  max-height: 250px; /* Adjust height as needed */
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 20px;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--primary-pink) rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+#msg-paragraphs::-webkit-scrollbar {
+  width: 6px;
+}
+#msg-paragraphs::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+#msg-paragraphs::-webkit-scrollbar-thumb {
+  background-color: var(--primary-pink);
+  border-radius: 10px;
 }
 
 .card h1 {
